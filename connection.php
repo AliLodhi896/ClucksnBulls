@@ -1,11 +1,11 @@
 <?php
 
 $Host = 'localhost';
-$DB_DATABASE='wetecsol_clucksnbulls';
-$DB_USERNAME='wetecsol_clucksnbulls';
-$DB_PASSWORD='clucksnbulls';
+$DB_DATABASE = 'wetecsol_clucksnbulls';
+$DB_USERNAME = '';
+$DB_PASSWORD = '';
 
-$conn = mysqli_connect($Host, $DB_USERNAME,$DB_PASSWORD,$DB_DATABASE);
+$conn = mysqli_connect($Host, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
 
 
 if (!$conn) {
