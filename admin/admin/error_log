@@ -1,0 +1,2 @@
+[06-Aug-2023 13:48:27 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'wetecsol_clucksnbulls'@'localhost' (using password: YES) in /home/wetecsol/public_html/clucksnbulls.wetecsol.com/admin/connection.php on line 8
+[06-Aug-2023 13:48:43 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'wetecsol_clucksnbulls'@'localhost' (using password: YES) in /home/wetecsol/public_html/clucksnbulls.wetecsol.com/admin/connection.php on line 8
