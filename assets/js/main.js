@@ -197,6 +197,8 @@
 
       let menuFilters = select("#menu-flters li", true);
 
+      let initialFilter = menuFilters[0].getAttribute("data-filter");
+      menuIsotope.arrange({ filter: initialFilter });
       on(
         "click",
         "#menu-flters li",

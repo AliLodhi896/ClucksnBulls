@@ -104,21 +104,21 @@
           <h2>Menu</h2>
           <p>Check Our Menu</p>
         </div>
+
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
-
               <?php
               require_once("connection.php");
               $sql = "select * from categories";
               $exec = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($exec);
-              $index = 0;
               $rec = mysqli_fetch_array($exec);
+              $index = 0;
               foreach ($exec as $row) {
                 $active = ($index == 0) ? 'filter-active' : '';
               ?>
-                <li class="filter-2 <?php echo $active; ?>" data-filter=".filter-<?php echo $row['id']; ?>">
+                <li class="<?php echo $active; ?>" data-filter=".filter-<?php echo $row['id']; ?>">
                   <?php echo $row['category_name']; ?>
                 </li>
               <?php
@@ -129,13 +129,14 @@
           </div>
         </div>
 
-        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" data-filter=".filter-<?php echo $row['id']; ?>">
           <?php
           require_once("connection.php");
           $sql = "select * from menu";
           $exec = mysqli_query($conn, $sql);
           $num = mysqli_num_rows($exec);
           $rec = mysqli_fetch_array($exec);
+          $index = 0;
           foreach ($exec as $row) {
           ?>
             <div class="col-lg-6 menu-item filter-<?php echo $row['category_id'] ?>">
@@ -533,7 +534,7 @@
           <span class="prev" id="prevBtn">&#10094;</span>
         <?php endif; ?>
         <?php foreach ($images as $image) : ?>
-          <img class="carousel-slide" src="<?php echo $image['modal_images']; ?>" alt="Image">
+          <img class="carousel-slide" data-aos="fade" data-aos-delay="100" src="<?php echo $image['modal_images']; ?>" alt="Image">
         <?php endforeach; ?>
         <?php if (count($images) > 1) : ?>
           <span class="next" id="nextBtn">&#10095;</span>
